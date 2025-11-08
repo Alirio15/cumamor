@@ -48,3 +48,10 @@ Este juego fue creado como un regalo especial de cumpleaños, lleno de mensajes 
 
 ¡Disfruta jugando! 🌻✨
 
+=======
+# cumamor
+FELIZ CUMPLE AMOR
+>>>>>>> eb7746b4a55c9e12b389766862e4ce53f38c3a34
+
+# cumamor
+FELIZ CUMPLE AMOR
