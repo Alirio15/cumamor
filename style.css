@@ -1,0 +1,333 @@
+
+.menu-tiny-message {
+    font-size: 1em;
+    color: #ff69b4;
+    margin-top: 8px;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+    font-family: 'Courier New', monospace;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #e6f3ff;
+    background-image: url('images/fondo.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.fancy-menu {
+    background: none;
+    z-index: 10;
+}
+
+.menu-card {
+    padding: 48px 32px 32px 32px;
+    max-width: 420px;
+    width: 95%;
+    text-align: center;
+    position: relative;
+    border-radius: 32px;
+    border: none;
+    animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Liquid Glass Effect */
+.liquid-glass {
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(18px) saturate(160%) contrast(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%) contrast(120%);
+    border-radius: 32px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-bottom: 2.5px solid #ffd70044;
+    border-top: 2.5px solid #ff69b444;
+    transition: box-shadow 0.3s;
+}
+.liquid-glass:hover {
+    box-shadow: 0 12px 40px 0 rgba(255, 215, 0, 0.18), 0 2px 8px rgba(255,105,180,0.10);
+}
+
+
+
+.menu-title {
+    font-size: 2.5em;
+    color: #FFD700;
+    text-shadow: 2px 2px 0px #FF8C00, 4px 4px 0px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+
+.menu-btn {
+    font-size: 1.3em;
+    padding: 18px 40px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #FFD700 0%, #FF69B4 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 0 #FF8C00;
+    text-shadow: 1px 1px 0 #FF8C00;
+    letter-spacing: 1px;
+}
+
+
+.menu-btn:hover {
+    background: linear-gradient(90deg, #FF69B4 0%, #FFD700 100%);
+    color: #fffbe6;
+}
+
+
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 3em;
+    color: #FFD700;
+    text-shadow: 3px 3px 0px #FF8C00, 6px 6px 0px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #FF69B4;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Courier New', monospace;
+    background: #FFD700;
+    border: 3px solid #FF8C00;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #FF8C00;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: #FFA500;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #FF8C00;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #FF8C00;
+}
+
+
+#game-screen {
+    background: rgba(255,255,255,0.10);
+    padding: 0;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    color: white;
+}
+
+#score {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#lives {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+#game-canvas {
+    border: 4px solid #FFD700;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: #87CEEB;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#message-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#message-content {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 5px solid #FF8C00;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: popIn 0.5s ease-out;
+}
+
+/* Carta de amor especial */
+#love-letter-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.love-letter-card {
+    background: #fffbe6;
+    border: 4px solid #ff69b4;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15), 0 2px 8px rgba(0,0,0,0.08);
+    padding: 28px 18px 18px 18px;
+    max-width: 340px;
+    width: 92vw;
+    min-width: 0;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.love-letter-header {
+    font-size: 2em;
+    color: #ff69b4;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #fff, 2px 2px 0 #ffd700;
+}
+
+.love-letter-body {
+    font-size: 1.08em;
+    color: #444;
+    margin-bottom: 18px;
+    min-height: 80px;
+    max-height: 260px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 2px;
+    text-align: left;
+    scrollbar-width: thin;
+    scrollbar-color: #ffd700 #fffbe6;
+}
+
+.love-letter-body::-webkit-scrollbar {
+    width: 6px;
+    background: #fffbe6;
+}
+.love-letter-body::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 6px;
+}
+
+#close-love-letter {
+    margin-top: 10px;
+    background: #ffd700;
+    color: #b22222;
+    border-color: #ff69b4;
+    font-size: 1.1em;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#game-over-screen h2 {
+    font-size: 3em;
+    color: #FFD700;
+    text-shadow: 3px 3px 0px #FF8C00;
+    margin-bottom: 20px;
+}
+
+#game-over-screen p {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+

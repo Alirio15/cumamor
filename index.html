@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌻 El Girasol y el Sol - Hecho con amor para ti 💛</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen fancy-menu">
+            <div class="menu-card liquid-glass">
+                <h1 class="menu-title">🌻 El Girasol y el Sol</h1>
+                <button id="start-btn" class="btn menu-btn">Comenzar</button>
+                <div class="menu-tiny-message">Hecho para Gabi ☀️</div>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div id="hud">
+                <div id="score">Puntos: 0</div>
+                <div id="lives">❤️ ❤️ ❤️</div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+            <div id="message-overlay" class="hidden">
+                <div id="message-content"></div>
+                <button id="close-message" class="btn">Continuar</button>
+            </div>
+            <!-- Carta de amor especial -->
+            <div id="love-letter-modal" class="hidden">
+                <div class="love-letter-card">
+                    <div class="love-letter-header">💌 Mi amor 💌</div>
+                    <div class="love-letter-body">
+                        <div id="love-letter-placeholder">
+                            <!-- Carta de amor personalizada -->
+                            <p style="font-size:1em; color:#444; line-height:1.6; margin:0; word-break:break-word; max-width:100%; text-align:left;">
+                                Hoy celebras 23 años de vida, y me hace muy feliz saber que he tenido la dicha de acompañarte en casi tres de ellos.<br><br>
+                                Me siento profundamente orgulloso de ti, de cómo, a pesar de todo lo que has enfrentado, sigues de pie, brillando y demostrando la fuerza increíble que llevas dentro. 🌻<br><br>
+                                Eres una mujer fantástica, llena de valores, bondad y un amor inmenso por dar.<br>
+                                Y tengo la fortuna (junto con Ozzyto) de ser quien más recibe ese amor tan grande y hermoso tuyo.<br><br>
+                                Deseo con todo mi corazón que este nuevo año de vida traiga calma, luz y muchas razones para sonreír.<br>
+                                Que poco a poco cada aspecto de tu vida se llene de cosas buenas, de momentos que te hagan sentir orgullosa y en paz.<br><br>
+                                Feliz cumpleaños, mi vida.<br>
+                                Si tú eres feliz, no hay nada más que pueda pedir.<br>
+                                Te amo. 💛
+                            </p>
+                        </div>
+                    </div>
+                    <button id="close-love-letter" class="btn">A ver qué récord consigues ;)</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-over-screen" class="screen hidden">
+            <h2>Fin del juego</h2>
+            <p id="final-score">Puntos finales: 0</p>
+            <p id="high-score">Récord: 0</p>
+            <button id="restart-btn" class="btn">Jugar de nuevo</button>
+            <button id="menu-btn" class="btn">Menú principal</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+ 
