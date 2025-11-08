@@ -17,7 +17,7 @@
 body {
     font-family: 'Courier New', monospace;
     background: #e6f3ff;
-    background-image: url('images/fondo.jpeg');
+    background-image: url('images/fondo.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
